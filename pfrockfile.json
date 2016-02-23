@@ -1,0 +1,13 @@
+{
+  "servers": [
+    {
+      "port": 8081,
+      "routes": [
+        {
+          "path": "/api",
+          "handler": "./mocks/hello-world.py"
+        }
+      ]
+    }
+  ]
+}
