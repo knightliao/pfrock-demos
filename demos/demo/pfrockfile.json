@@ -62,8 +62,8 @@
           "methods": "any",
           "handler": "pfrock-proxy",
           "options": {
-            "url": "http://www.sov5.com",
-            "host": ""
+            "url": "http://tieba.baidu.com",
+            "host": "tieba.baidu.com"
           }
         }
       ]
