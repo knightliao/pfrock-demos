@@ -1,11 +1,57 @@
 {
   "servers": [
     {
-      "port": 8081,
+      "port": 8888,
       "routes": [
         {
           "path": "/api",
-          "handler": "./mocks/hello-world.py"
+          "handler": "mocks.handler.hello_world.HelloWorldHandler",
+          "options": {
+            "query": "1!",
+            "pageno": 1
+          }
+        },
+        {
+          "path": "/api/persistence",
+          "handler": "mocks.handler.persistence.PersistenceHandler"
+        },
+        {
+          "path": "/api1/(.*)",
+          "handler": "pfrock-static",
+          "options": {
+            "routes": [
+              {
+                "path": "people2",
+                "file": "mocks/static/a.json"
+              },
+              {
+                "dir": "mocks/static"
+              }
+            ]
+          }
+        },
+        {
+          "path": "/api2/people",
+          "handler": "pfrock-static",
+          "options": {
+            "file": "mocks/static/b.json"
+          }
+        },
+        {
+          "path": "/api3/(.*)",
+          "handler": "pfrock-static",
+          "options": {
+            "dir": "mocks/static"
+          }
+        },
+        {
+          "path": ".*",
+          "methods": "any",
+          "handler": "pfrock-proxy",
+          "options": {
+            "url": "http://www.sov5.com",
+            "host": ""
+          }
         }
       ]
     }
