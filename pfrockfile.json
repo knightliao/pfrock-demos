@@ -4,18 +4,6 @@
       "port": 8888,
       "routes": [
         {
-          "path": "/api",
-          "handler": "mocks.handler.hello_world.HelloWorldHandler",
-          "options": {
-            "query": "1!",
-            "pageno": 1
-          }
-        },
-        {
-          "path": "/api/persistence",
-          "handler": "mocks.handler.persistence.PersistenceHandler"
-        },
-        {
           "path": "/api1/(.*)",
           "handler": "pfrock-static",
           "options": {
@@ -38,11 +26,36 @@
           }
         },
         {
+          "path": "/api2/people",
+          "handler": "pfrock-static",
+          "options": {
+            "file": "mocks/static/a.json"
+          }
+        },
+        {
           "path": "/api3/(.*)",
           "handler": "pfrock-static",
           "options": {
             "dir": "mocks/static"
           }
+        },
+        {
+          "path": "/api",
+          "methods": [
+            "GET"
+          ],
+          "handler": "mocks.handler.hello_world.HelloWorldHandler",
+          "options": {
+            "query": "1!",
+            "pageno": 1
+          }
+        },
+        {
+          "path": "/api/persistence",
+          "methods": [
+            "GET"
+          ],
+          "handler": "mocks.handler.persistence.PersistenceHandler"
         },
         {
           "path": ".*",

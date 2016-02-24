@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 # coding=utf8
-import tornado.web
+
+from pfrock2.core.web import PfrockRequestDispatcher
 
 
-class HelloWorldHandler(tornado.web.RequestHandler):
+class HelloWorldHandler(PfrockRequestDispatcher):
     def get(self):
         self.write("Hello, world " + self.query + " " + str(self.page_no))
 
