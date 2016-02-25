@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding=utf8
 
-from pfrock2.core.web import PfrockRequestDispatcher
+from pfrock.core.web import PfrockRequestDispatcher
 
 grower_index = 0
 
