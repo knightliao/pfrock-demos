@@ -5,7 +5,7 @@
       "routes": [
         {
           "path": "/api1/(.*)",
-          "handler": "pfrock-static",
+          "handler": "pfrock_static_plugin",
           "options": {
             "routes": [
               {
@@ -20,21 +20,21 @@
         },
         {
           "path": "/api2/people",
-          "handler": "pfrock-static",
+          "handler": "pfrock_static_plugin",
           "options": {
             "file": "mocks/static/b.json"
           }
         },
         {
           "path": "/api2/people",
-          "handler": "pfrock-static",
+          "handler": "pfrock_static_plugin",
           "options": {
             "file": "mocks/static/a.json"
           }
         },
         {
           "path": "/api3/(.*)",
-          "handler": "pfrock-static",
+          "handler": "pfrock_static_plugin",
           "options": {
             "dir": "mocks/static"
           }
@@ -44,8 +44,9 @@
           "methods": [
             "GET"
           ],
-          "handler": "mocks.handler.hello_world.HelloWorldHandler",
+          "handler": "pfrock_http_plugin",
           "options": {
+            "handler": "mocks.handler.hello_world.HelloWorldHandler",
             "query": "1!",
             "pageno": 1
           }
@@ -55,12 +56,17 @@
           "methods": [
             "GET"
           ],
-          "handler": "mocks.handler.persistence.PersistenceHandler"
+          "handler": "pfrock_http_plugin",
+          "options": {
+            "handler": "mocks.handler.persistence.PersistenceHandler",
+            "query": "1!",
+            "pageno": 1
+          }
         },
         {
           "path": ".*",
           "methods": "any",
-          "handler": "pfrock-proxy",
+          "handler": "pfrock_proxy_plugin",
           "options": {
             "url": "http://tieba.baidu.com",
             "host": "tieba.baidu.com"

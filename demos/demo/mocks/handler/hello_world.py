@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # coding=utf8
-
 from pfrock.core.web import PfrockRequestDispatcher
 
 
