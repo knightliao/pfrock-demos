@@ -26,14 +26,14 @@ demos for 微服务mock服务 using python. https://github.com/knightliao/pfrock
      |  |       \|  |_)  |  |\  \    `'  '-'  '(_'  '--'\ |  |\   \
      `--'        `--'    `--' '--'     `-----'    `-----' `--' '--'
     pfrock version 0.2.1.dev16
-    [D 2016-02-26 23:59:02,541 pfrock.core MainThread routes:74] add : (u'/api1/people2', <class 'pfrock_static_plugin.handlers.file.FrockStaticFileHandler'>, {'path': u'mocks/static/a.json', 'methods': []})
-    [D 2016-02-26 23:59:02,542 pfrock.core MainThread routes:74] add : (u'/api1/(.*)', <class 'pfrock_static_plugin.handlers.dir.FrockStaticDirHandler'>, {'path': u'mocks/static', 'methods': []})
-    [D 2016-02-26 23:59:02,542 pfrock.core MainThread routes:74] add : (u'/api2/people', <class 'pfrock_static_plugin.handlers.file.FrockStaticFileHandler'>, {'path': u'mocks/static/b.json', 'methods': []})
-    [D 2016-02-26 23:59:02,542 pfrock.core MainThread routes:74] add : (u'/api3/(.*)', <class 'pfrock_static_plugin.handlers.dir.FrockStaticDirHandler'>, {'path': u'mocks/static', 'methods': []})
-    [D 2016-02-26 23:59:02,543 pfrock.core MainThread routes:74] add : (u'/api', <class 'mocks.handler.hello_world.HelloWorldHandler'>, {u'query': u'1!', u'handler': u'mocks.handler.hello_world.HelloWorldHandler', 'methods': [u'GET'], u'pageno': 1})
-    [D 2016-02-26 23:59:02,543 pfrock.core MainThread routes:74] add : (u'/api/persistence', <class 'mocks.handler.persistence.PersistenceHandler'>, {u'query': u'1!', u'handler': u'mocks.handler.persistence.PersistenceHandler', 'methods': [u'GET'], u'pageno': 1})
-    [D 2016-02-26 23:59:02,546 pfrock.core MainThread routes:74] add : (u'.*', <class 'pfrock_proxy_plugin.proxy.ProxyHandler'>, {'header_host': u'tieba.baidu.com', 'proxy_url': u'http://tieba.baidu.com', 'methods': []})
-    [I 2016-02-26 23:59:02,547 pfrock.core MainThread __init__:19] started server 8888 with autoreload mode
+    [D 2016-02-27 00:12:44,256 pfrock.core MainThread routes:74] add : (u'/api1/people2', <class 'pfrock_static_plugin.handlers.file.FrockStaticFileHandler'>, {'path': u'mocks/static/a.json', 'methods': []})
+    [D 2016-02-27 00:12:44,256 pfrock.core MainThread routes:74] add : (u'/api1/(.*)', <class 'pfrock_static_plugin.handlers.dir.FrockStaticDirHandler'>, {'path': u'mocks/static', 'methods': []})
+    [D 2016-02-27 00:12:44,257 pfrock.core MainThread routes:74] add : (u'/api2/people', <class 'pfrock_static_plugin.handlers.file.FrockStaticFileHandler'>, {'path': u'mocks/static/b.json', 'methods': []})
+    [D 2016-02-27 00:12:44,257 pfrock.core MainThread routes:74] add : (u'/api3/(.*)', <class 'pfrock_static_plugin.handlers.dir.FrockStaticDirHandler'>, {'path': u'mocks/static', 'methods': []})
+    [D 2016-02-27 00:12:44,258 pfrock.core MainThread routes:74] add : (u'/api', <class 'mocks.handler.hello_world.HelloWorldHandler'>, {u'query': u'1!', u'handler': u'mocks.handler.hello_world.HelloWorldHandler', 'methods': [u'GET'], u'pageno': 1})
+    [D 2016-02-27 00:12:44,258 pfrock.core MainThread routes:74] add : (u'/api/persistence', <class 'mocks.handler.persistence.PersistenceHandler'>, {u'query': u'1!', u'handler': u'mocks.handler.persistence.PersistenceHandler', 'methods': [u'GET'], u'pageno': 1})
+    [D 2016-02-27 00:12:44,261 pfrock.core MainThread routes:74] add : (u'.*', <class 'pfrock_proxy_plugin.proxy.ProxyHandler'>, {'header_host': '', 'proxy_url': u'http://www.sov5.com', 'methods': []})
+    [I 2016-02-27 00:12:44,261 pfrock.core MainThread __init__:19] started server 8888 with autoreload mode
 
 ### 配置文件
 
