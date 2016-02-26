@@ -26,13 +26,6 @@
           }
         },
         {
-          "path": "/api2/people",
-          "handler": "pfrock_static_plugin",
-          "options": {
-            "file": "mocks/static/a.json"
-          }
-        },
-        {
           "path": "/api3/(.*)",
           "handler": "pfrock_static_plugin",
           "options": {
