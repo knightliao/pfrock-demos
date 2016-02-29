@@ -1,0 +1,38 @@
+{
+  "servers": [
+    {
+      "port": 8888,
+      "routes": [
+        {
+          "path": "/api1/(.*)",
+          "handler": "pfrock_static_plugin",
+          "options": {
+            "routes": [
+              {
+                "path": "people2",
+                "file": "mocks/static/a.json"
+              },
+              {
+                "dir": "mocks/static"
+              }
+            ]
+          }
+        },
+        {
+          "path": "/api2/people",
+          "handler": "pfrock_static_plugin",
+          "options": {
+            "file": "mocks/static/b.json"
+          }
+        },
+        {
+          "path": "/api3/(.*)",
+          "handler": "pfrock_static_plugin",
+          "options": {
+            "dir": "mocks/static"
+          }
+        }
+      ]
+    }
+  ]
+}

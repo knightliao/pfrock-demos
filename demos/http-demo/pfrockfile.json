@@ -1,0 +1,33 @@
+{
+  "servers": [
+    {
+      "port": 8888,
+      "routes": [
+        {
+          "path": "/api",
+          "methods": [
+            "GET"
+          ],
+          "handler": "pfrock_http_plugin",
+          "options": {
+            "handler": "mocks.handler.hello_world.HelloWorldHandler",
+            "query": "1!",
+            "pageno": 1
+          }
+        },
+        {
+          "path": "/api/persistence",
+          "methods": [
+            "GET"
+          ],
+          "handler": "pfrock_http_plugin",
+          "options": {
+            "handler": "mocks.handler.persistence.PersistenceHandler",
+            "query": "1!",
+            "pageno": 1
+          }
+        }
+      ]
+    }
+  ]
+}
