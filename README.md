@@ -6,7 +6,7 @@ demos for 微服务mock服务 using python. https://github.com/knightliao/pfrock
 
 ### install pfrock
 
-    pip install pfrock==0.2.1.dev16
+    pip install pfrock==0.2.1.a2
 
 ### run demo
     
@@ -35,88 +35,13 @@ demos for 微服务mock服务 using python. https://github.com/knightliao/pfrock
     [D 2016-02-27 00:12:44,261 pfrock.core MainThread routes:74] add : (u'.*', <class 'pfrock_proxy_plugin.proxy.ProxyHandler'>, {'header_host': '', 'proxy_url': u'http://www.sov5.com', 'methods': []})
     [I 2016-02-27 00:12:44,261 pfrock.core MainThread __init__:19] started server 8888 with autoreload mode
 
-### 配置文件
+### demos
 
-    {
-      "servers": [
-        {
-          "port": 8888,
-          "routes": [
-            {
-              "path": "/api1/(.*)",
-              "handler": "pfrock_static_plugin",
-              "options": {
-                "routes": [
-                  {
-                    "path": "people2",
-                    "file": "mocks/static/a.json"
-                  },
-                  {
-                    "dir": "mocks/static"
-                  }
-                ]
-              }
-            },
-            {
-              "path": "/api2/people",
-              "handler": "pfrock_static_plugin",
-              "options": {
-                "file": "mocks/static/b.json"
-              }
-            },
-            {
-              "path": "/api3/(.*)",
-              "handler": "pfrock_static_plugin",
-              "options": {
-                "dir": "mocks/static"
-              }
-            },
-            {
-              "path": "/api",
-              "methods": [
-                "GET"
-              ],
-              "handler": "pfrock_http_plugin",
-              "options": {
-                "handler": "mocks.handler.hello_world.HelloWorldHandler",
-                "query": "1!",
-                "pageno": 1
-              }
-            },
-            {
-              "path": "/api/persistence",
-              "methods": [
-                "GET"
-              ],
-              "handler": "pfrock_http_plugin",
-              "options": {
-                "handler": "mocks.handler.persistence.PersistenceHandler",
-                "query": "1!",
-                "pageno": 1
-              }
-            },
-            {
-              "path": ".*",
-              "methods": "any",
-              "handler": "pfrock_proxy_plugin",
-              "options": {
-                "url": "http://www.sov5.com"
-              }
-            }         
-          ]
-        }
-      ]
-    }
+- [static-demo](https://github.com/knightliao/pfrock-demos/tree/master/demos/http-demo): 静态服务能力demo 
+- [http-demo](https://github.com/knightliao/pfrock-demos/tree/master/demos/http-demo): http服务能力demo
+- [proxy-demo](https://github.com/knightliao/pfrock-demos/tree/master/demos/proxy-demo): proxy服务能力demo
+- [json-http-demo](https://github.com/knightliao/pfrock-demos/tree/master/demos/json-http-demo): json-rpc服务能力demo
+- [demo](https://github.com/knightliao/pfrock-demos/tree/master/demos/demo) : 整合demo
+  
 
-- 静态服务能力：
-    - /api1/(.*)
-        - /api1/people2  --> mocks/static/a.json
-        - /api/(.*) --> mocks/static
-    - /api2/people --> mocks/static/b.json
-    - /api3/(.*)  --> mocks/static
-- 动态服务能力：
-    - /api  --> mocks.handler.hello_world.HelloWorldHandler
-    - /api/persistence  --> mocks.handler.persistence.PersistenceHandler
-- 代理服务能力：
-    - 其它接口 -->  http://www.sov5.com   
 
