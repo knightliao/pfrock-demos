@@ -1,0 +1,16 @@
+{
+  "servers": [
+    {
+      "port": 8888,
+      "routes": [
+        {
+          "path": "/export/DemoServiceDriver",
+          "handler": "pfrock_static_plugin",
+          "options": {
+            "file": "mocks/static/result1.json"
+          }
+        }
+      ]
+    }
+  ]
+}
