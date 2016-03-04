@@ -6,7 +6,7 @@ demos for 微服务mock服务 using python. https://github.com/knightliao/pfrock
 
 ### install pfrock
 
-    pip install pfrock==0.2.2
+    pip install pfrock==0.2.3
     
 ### demos
 
