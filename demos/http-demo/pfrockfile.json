@@ -10,9 +10,7 @@
                     ],
                     "handler": "pfrock_http_plugin",
                     "options": {
-                        "handler": "mocks.handler.hello_world.HelloWorldHandler",
-                        "query": "1!",
-                        "pageno": 1
+                        "handler": "mocks.handler.hello_world.HelloWorldHandler"
                     }
                 },
                 {
@@ -22,9 +20,7 @@
                     ],
                     "handler": "pfrock_http_plugin",
                     "options": {
-                        "handler": "mocks.handler.persistence.PersistenceHandler",
-                        "query": "1!",
-                        "pageno": 1
+                        "handler": "mocks.handler.persistence.PersistenceHandler"
                     }
                 }
             ]
