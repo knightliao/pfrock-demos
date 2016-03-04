@@ -1,38 +1,63 @@
 {
-  "servers": [
-    {
-      "port": 8888,
-      "routes": [
+    "servers": [
         {
-          "path": "/api1/(.*)",
-          "handler": "pfrock_static_plugin",
-          "options": {
+            "port": 8888,
             "routes": [
-              {
-                "path": "people2",
-                "file": "mocks/static/a.json"
-              },
-              {
-                "dir": "mocks/static"
-              }
+                {
+                    "path": "/api1/(.*)",
+                    "handler": "pfrock_static_plugin",
+                    "options": {
+                        "routes": [
+                            {
+                                "path": "json",
+                                "file": "mocks/static/a.json"
+                            },
+                            {
+                                "path": "json2",
+                                "file": "mocks/static/a.json",
+                                "headers": {
+                                    "Content-Type": "application/json"
+                                }
+                            },
+                            {
+                                "path": "html",
+                                "file": "mocks/static/a.html",
+                                "headers": {
+                                    "Content-Type": "text/html; charset=UTF-8"
+                                }
+                            },
+                            {
+                                "dir": "mocks/static"
+                            }
+                        ],
+                        "headers": {
+                            "Content-Type": "application/json",
+                            "Cache-Control": "no-cache"
+                        }
+                    }
+                },
+                {
+                    "path": "/api2/json",
+                    "handler": "pfrock_static_plugin",
+                    "options": {
+                        "file": "mocks/static/b.json"
+                    }
+                },
+                {
+                    "path": "/api3/html",
+                    "handler": "pfrock_static_plugin",
+                    "options": {
+                        "file": "mocks/static/a.html"
+                    }
+                },
+                {
+                    "path": "/api3/(.*)",
+                    "handler": "pfrock_static_plugin",
+                    "options": {
+                        "dir": "mocks/static"
+                    }
+                }
             ]
-          }
-        },
-        {
-          "path": "/api2/people",
-          "handler": "pfrock_static_plugin",
-          "options": {
-            "file": "mocks/static/b.json"
-          }
-        },
-        {
-          "path": "/api3/(.*)",
-          "handler": "pfrock_static_plugin",
-          "options": {
-            "dir": "mocks/static"
-          }
         }
-      ]
-    }
-  ]
+    ]
 }
