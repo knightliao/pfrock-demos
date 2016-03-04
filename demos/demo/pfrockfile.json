@@ -1,70 +1,70 @@
 {
-  "servers": [
-    {
-      "port": 8888,
-      "routes": [
+    "servers": [
         {
-          "path": "/api1/(.*)",
-          "handler": "pfrock_static_plugin",
-          "options": {
+            "port": 8888,
             "routes": [
-              {
-                "path": "people2",
-                "file": "mocks/static/a.json"
-              },
-              {
-                "dir": "mocks/static"
-              }
+                {
+                    "path": "/api1/(.*)",
+                    "handler": "pfrock_static_plugin",
+                    "options": {
+                        "routes": [
+                            {
+                                "path": "json",
+                                "file": "mocks/static/a.json"
+                            },
+                            {
+                                "dir": "mocks/static"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "path": "/api2/json",
+                    "handler": "pfrock_static_plugin",
+                    "options": {
+                        "file": "mocks/static/b.json"
+                    }
+                },
+                {
+                    "path": "/api3/(.*)",
+                    "handler": "pfrock_static_plugin",
+                    "options": {
+                        "dir": "mocks/static"
+                    }
+                },
+                {
+                    "path": "/api",
+                    "methods": [
+                        "GET"
+                    ],
+                    "handler": "pfrock_http_plugin",
+                    "options": {
+                        "handler": "mocks.handler.hello_world.HelloWorldHandler",
+                        "query": "1!",
+                        "pageno": 1
+                    }
+                },
+                {
+                    "path": "/api/persistence",
+                    "methods": [
+                        "GET"
+                    ],
+                    "handler": "pfrock_http_plugin",
+                    "options": {
+                        "handler": "mocks.handler.persistence.PersistenceHandler",
+                        "query": "1!",
+                        "pageno": 1
+                    }
+                },
+                {
+                    "path": ".*",
+                    "methods": "any",
+                    "handler": "pfrock_proxy_plugin",
+                    "options": {
+                        "url": "http://www.sov5.com"
+                    }
+                }
             ]
-          }
-        },
-        {
-          "path": "/api2/people",
-          "handler": "pfrock_static_plugin",
-          "options": {
-            "file": "mocks/static/b.json"
-          }
-        },
-        {
-          "path": "/api3/(.*)",
-          "handler": "pfrock_static_plugin",
-          "options": {
-            "dir": "mocks/static"
-          }
-        },
-        {
-          "path": "/api",
-          "methods": [
-            "GET"
-          ],
-          "handler": "pfrock_http_plugin",
-          "options": {
-            "handler": "mocks.handler.hello_world.HelloWorldHandler",
-            "query": "1!",
-            "pageno": 1
-          }
-        },
-        {
-          "path": "/api/persistence",
-          "methods": [
-            "GET"
-          ],
-          "handler": "pfrock_http_plugin",
-          "options": {
-            "handler": "mocks.handler.persistence.PersistenceHandler",
-            "query": "1!",
-            "pageno": 1
-          }
-        },
-        {
-          "path": ".*",
-          "methods": "any",
-          "handler": "pfrock_proxy_plugin",
-          "options": {
-            "url": "http://www.sov5.com"
-          }
         }
-      ]
-    }
-  ]
+    ]
 }
