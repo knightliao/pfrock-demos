@@ -1,17 +1,18 @@
 {
-  "servers": [
-    {
-      "port": 8888,
-      "routes": [
+    "servers": [
         {
-          "path": ".*",
-          "methods": "any",
-          "handler": "pfrock_proxy_plugin",
-          "options": {
-            "url": "http://www.sov5.com"
-          }
+            "port": 8888,
+            "routes": [
+                {
+                    "path": ".*",
+                    "methods": "any",
+                    "handler": "pfrock_proxy_plugin",
+                    "options": {
+                        "url": "https://www.google.com.hk",
+                        "host": "www.google.com.hk"
+                    }
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }
