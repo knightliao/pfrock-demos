@@ -1,0 +1,33 @@
+{
+    "servers": [
+        {
+            "port": 8888,
+            "routes": [
+                {
+                    "path": "/api4/json",
+                    "handler": "pfrock_static_plugin",
+                    "options": {
+                        "files": [
+                            {
+                                "rule": [
+                                    "=",
+                                    "${userId}",
+                                    "1"
+                                ],
+                                "file": "mocks/static/a.json"
+                            },
+                            {
+                                "rule": [
+                                    "=",
+                                    "${userId}",
+                                    "2"
+                                ],
+                                "file": "mocks/static/b.json"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}
