@@ -23,6 +23,9 @@
                                     "2"
                                 ],
                                 "file": "mocks/static/b.json"
+                            },
+                            {
+                                "file": "mocks/static/c.json"
                             }
                         ]
                     }
