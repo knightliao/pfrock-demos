@@ -1,15 +1,42 @@
 {
     "servers": [
         {
-            "port": 8888,
+            "port": 8892,
             "routes": [
+                {
+                    "path": "/",
+                    "methods": "any",
+                    "handler": "pfrock_proxy_plugin",
+                    "options": {
+                        "url": "https://scholar.google.com",
+                        "host": "scholar.google.com"
+                    }
+                },
+                {
+                    "path": "/scholar.*",
+                    "methods": "any",
+                    "handler": "pfrock_proxy_plugin",
+                    "options": {
+                        "url": "https://scholar.google.com",
+                        "host": "scholar.google.com"
+                    }
+                },
+                {
+                    "path": "/sorry.*",
+                    "methods": "any",
+                    "handler": "pfrock_proxy_plugin",
+                    "options": {
+                        "url": "https://ipv4.google.com",
+                        "host": "ipv4.google.com"
+                    }
+                },
                 {
                     "path": ".*",
                     "methods": "any",
                     "handler": "pfrock_proxy_plugin",
                     "options": {
-                        "url": "https://www.google.com.hk",
-                        "host": "www.google.com.hk"
+                        "url": "https://google.com",
+                        "host": "google.com"
                     }
                 }
             ]
