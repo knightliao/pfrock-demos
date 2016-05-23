@@ -26,6 +26,25 @@
                             },
                             {
                                 "file": "mocks/static/c.json"
+                            },
+                            {
+                                "rule": [
+                                    "and",
+                                    [
+                                        "=",
+                                        "${userId}",
+                                        "2"
+                                    ],
+                                    [
+                                        "=",
+                                        "${userId}",
+                                        "2"
+                                    ]
+                                ],
+                                "file": "mocks/static/b.json"
+                            },
+                            {
+                                "file": "mocks/static/c.json"
                             }
                         ]
                     }
